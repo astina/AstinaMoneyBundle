@@ -1,0 +1,19 @@
+Astina\Bundle\MoneyBundle\Entity\CurrencyExchangeRate:
+    type:
+        entity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    uniqueConstraints:
+        astina_money_conversion:
+            columns: [ base, target ]
+    fields:
+        base:
+            type: string
+            length: 3
+        target:
+            type: string
+            length: 3
+        rate:
+            type: float

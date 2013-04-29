@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="astina_money.money_converter.class">Astina\Bundle\MoneyBundle\Converter\MoneyConverter</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="astina_money.money_converter" class="%astina_money.money_converter.class%">
+            <argument type="service" id="astina_money.repository.currency_exchange_rate" />
+        </service>
+
+        <!-- Repositories -->
+
+        <service id="astina_money.repository.currency_exchange_rate"
+                 class="Doctrine\ORM\EntityRepository"
+                 factory-service="doctrine"
+                 factory-method="getRepository">
+            <argument>AstinaMoneyBundle:CurrencyExchangeRate</argument>
+        </service>
+
+    </services>
+
+</container>
