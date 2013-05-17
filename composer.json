@@ -1,6 +1,8 @@
 {
     "name": "astina/money-bundle",
     "type": "symfony-bundle",
+    "homepage": "http://astina.ch",
+    "license": "MIT",
     "require": {
         "99designs/money-php": "v1.0.0"
     },
