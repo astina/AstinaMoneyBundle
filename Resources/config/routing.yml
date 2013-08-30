@@ -1,3 +1,0 @@
-astina_money_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AstinaMoneyBundle:Default:index }
